@@ -1,0 +1,30 @@
+#!/usr/bin/python3
+from pijuice import PiJuice
+from power_api import SixfabPower, Definition
+import time
+
+#pijuice = PiJuice(1, 0x14)
+#charge = pijuice.status.GetChargeLevel()['data']
+
+api = SixfabPower()
+
+print("Battery Level: " + str(api.get_battery_level()) + "%")
+
+#print("Battery Level=",charge,"%")
+
+#net_tmp=/tmp/netspeed.tmp 
+#temp=$(($(cat /sys/devices/virtual/thermal/thermal_zone0/temp) / 1000))
+#load=$(cat /proc/loadavg | cut -d ' ' -f 2)
+#recv=$(cat /proc/net/dev | grep -v 'lo:' | tr -s ' ' | cut -d ' ' -f 3 | tail +3 | awk '{s+=$1} END {print s}')
+#send=$(cat /proc/net/dev | grep -v 'lo:' | tr -s ' ' | cut -d ' ' -f 11 | tail +3 | awk '{s+=$1} END {print s}')
+#total=$(($recv + $send))
+#if [ -e $net_tmp ]; then
+#    prev_total=$(cat $net_tmp)
+#    speed=$(($total - $prev_total))
+#else
+#    speed=0
+#fi
+#echo $total > $net_tmp
+#speed=$(($speed / 1024))
+#echo -n "$temp&deg;|$load|${speed}kB/s"
+
